@@ -203,6 +203,11 @@ const playStop = () => {
 		btnmute.innerHTML = '<i class="fa-video-camera"></i>'
 	}
 }
+
+window.onunload = window.onbeforeunload = function () {
+	console.log('exiting');
+	ExitRoom();
+  }
 async function ScreenShare() {
 	if (btnscreenshare.innerHTML == '<i class="fa fa-desktop"></i>') {
 		try {
