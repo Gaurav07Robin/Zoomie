@@ -192,6 +192,17 @@ window.onunload = window.onbeforeunload = function () {
 	console.log('exiting');
 	ExitRoom();
 }
+
+const playStop = () => {
+	if (btnmute.innerHTML == '<i class="fa-video-camera"></i>') {
+		myStream.getVideoTracks()[0].enabled = false;
+		btnmute.innerHTML = '<i class="fa-video-camera-slash"></i>'
+	}
+	else {
+		myStream.getVideoTracks()[0].enabled = true;
+		btnmute.innerHTML = '<i class="fa-video-camera"></i>'
+	}
+}
 async function ScreenShare() {
 	if (btnscreenshare.innerHTML == '<i class="fa fa-desktop"></i>') {
 		try {
